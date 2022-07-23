@@ -30,56 +30,57 @@ const menuOptions1 = [
 ];
 const menuOptions2 = [
   {
-    id: '7',
+    id: '1',
     label: t('seventhMenuEntry'),
   },
   {
-    id: '8',
+    id: '2',
     label: t('eightMenuEntry'),
   },
   {
-    id: '9',
+    id: '3',
     label: t('ninthMenuEntry'),
   },
   {
-    id: '10',
-    label: t('tenthMenuEntry'),
+    id: '4',
+    label: t('thirteenthMenuEntry'),
   },
+
   {
-    id: '11',
+    id: '5',
     label: t('eleventhMenuEntry'),
   },
   {
-    id: '12',
+    id: '6',
     label: t('twelfthMenuEntry'),
   },
   {
-    id: '13',
-    label: t('thirteenthMenuEntry'),
+    id: '7',
+    label: t('tenthMenuEntry'),
   },
 ];
 
 export function WorkPage() {
   return (
     <HeaderTitleLayout title={t('touristMedicalOffice')} description={t('menuSchema')}>
-      <div className="flex xl:mt-20 sm:mx-20 justify-between flex-wrap">
-        <div className="flex flex-col justify-between items-center xl:max-w-3xl">
+      <div className="flex xl:mt-20 sm:mx-20 justify-between">
+        <div className="flex flex-col justify-between items-start xl:max-w-3xl">
           {menuOptions1.map((item) => (
             <div
-              className="flex flex-col justify-between xl:max-w-3xl hover:text-primary-main hover:bg-secondary-light rounded-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-secondary-main hover:ring-secondary-light"
+              className="flex flex-col xl:max-w-3xl hover:text-primary-main hover:bg-secondary-light rounded-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-secondary-main hover:ring-secondary-light"
               key={item.id}
             >
-              <div className="m-4 text-lg ">{item.label}</div>
+              <div className="m-2 text-lg ">{item.label}</div>
             </div>
           ))}
         </div>
-        <div className="flex flex-col justify-between items-center">
+        <div className="flex flex-col justify-between items-start">
           {menuOptions2.map((item) => (
             <div
-              className="flex flex-col justify-between xl:max-w-3xl hover:text-primary-main hover:bg-secondary-light rounded-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-secondary-main hover:ring-secondary-light"
+              className="flex flex-col xl:max-w-3xl hover:text-primary-main hover:bg-secondary-light rounded-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-secondary-main hover:ring-secondary-light"
               key={item.id}
             >
-              <div className="m-4 text-lg ">{item.label}</div>
+              <div className="m-2 text-lg">{item.label}</div>
             </div>
           ))}
         </div>

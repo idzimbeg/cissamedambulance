@@ -1,7 +1,7 @@
 import { backgroundImage } from 'consts/consts';
 
 interface HeaderTitleProps {
-  title: never;
+  title?: never;
   description?: never;
   children?: React.ReactNode;
 }
@@ -18,7 +18,7 @@ export const HeaderTitleLayout = ({ title, description, children }: HeaderTitleP
                 <img src={backgroundImage} />
               </h1>
               {description && (
-                <p className="lg:mx-56 tracking-wide text-light-100 text-xl text-secondary-main">{description}</p>
+                <p className="lg:mx-56 tracking-wide justify-center text-xl text-secondary-main">{description}</p>
               )}
             </div>
           </div>

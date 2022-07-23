@@ -6,7 +6,7 @@ export function AboutPage() {
   const { t } = useTranslation();
 
   return (
-    <HeaderTitleLayout title={t('touristMedicalOffice')} description={t('accessibility')}>
+    <HeaderTitleLayout description={t('accessibility')}>
       <Map />
     </HeaderTitleLayout>
   );
