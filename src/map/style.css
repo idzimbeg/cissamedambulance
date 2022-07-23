@@ -1,18 +1,4 @@
-.Map {
-  font-family: sans-serif;
-  text-align: center;
-}
-
 .c-office-overview__map {
   height: 30rem;
-  width: 70rem;
-  border-radius: 5%;
-}
-
-.c-office-overview__map-selected-info__close {
-  background: none;
-  border: none;
-  position: absolute;
-  right: 0;
-  top: 0;
+  width: full;
 }

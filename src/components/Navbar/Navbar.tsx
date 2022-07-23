@@ -1,7 +1,9 @@
 import { Fragment } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { MenuAlt1Icon } from '@heroicons/react/solid';
 import { NavLink, To } from 'react-router-dom';
+import { MenuAlt1Icon } from '@heroicons/react/solid';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { t } from 'i18next';
+
 import { backgroundImage, LANGUAGES, symbol } from 'consts/consts';
 import { i18n } from 'language/i18';
 
@@ -19,19 +21,19 @@ interface Props {
 const NAVIGATION: NavigationItem[] = [
   {
     to: '/',
-    name: 'Home',
+    name: t('Home'),
   },
   {
     to: '/work',
-    name: 'Work',
+    name: t('Work'),
   },
   {
-    to: '/about',
-    name: 'About',
+    to: '/contact',
+    name: t('Where to find us'),
   },
 ];
 
-const MenuItem = ({ item, onClickItem }: Props) => (
+export const MenuItem = ({ item, onClickItem }: Props) => (
   <NavLink
     to={item.to}
     className={() =>
@@ -81,13 +83,12 @@ export default function Navbar() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <>
                   {' '}
-                  <span className="sr-only">View notifications</span>
                   <img className="h-8 w-8 rounded-full" src={symbol} alt="" />
                   {/* Language Dropdown */}
                   <Menu as="div" className="ml-3 relative">
                     <div>
                       <Menu.Button className="bg-primary-main flex text-md text-primary-light rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-main focus:ring-secondary-main">
-                        <p className="m-1">Languages</p>
+                        <>{t('Languages')}</>
                       </Menu.Button>
                     </div>
                     <Transition
@@ -100,13 +101,15 @@ export default function Navbar() {
                       leaveTo="transform opacity-0 scale-95"
                     >
                       <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <ol onChange={() => console.log('click')}>
+                        <ol>
                           {Object.keys(LANGUAGES).map((language) => (
                             <li key={language}>
                               <button
                                 key={language}
-                                type="submit"
-                                onClick={() => i18n.changeLanguage(language)}
+                                onClick={() => {
+                                  i18n.changeLanguage(language);
+                                  window.location.reload();
+                                }}
                                 className="bg-primary-light p-1 rounded-md text-primary-main hover:text-secondary-main"
                               >
                                 <>{LANGUAGES[language].nativeName}</>

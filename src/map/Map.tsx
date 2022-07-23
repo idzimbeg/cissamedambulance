@@ -40,13 +40,13 @@ export default function Map() {
     setSelectedOffice(offices.find((office) => office.id === officeId));
   };
   return (
-    <div className="Map">
+    <div>
       {isLoaded && (
         <>
           <GoogleMap
             mapContainerClassName="c-office-overview__map"
             onLoad={onLoad}
-            zoom={16}
+            zoom={17}
             center={new google.maps.LatLng(offices[0].field_address.latitude, offices[0].field_address.longitude)}
           >
             {offices.map((office) => (
