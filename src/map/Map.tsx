@@ -1,7 +1,7 @@
-import { useCallback, useRef, useState } from 'react';
+import { useState } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 
-import { offices, symbol } from 'consts/consts';
+import { office, symbol } from 'consts/consts';
 
 import './style.css';
 
@@ -14,30 +14,19 @@ type OfficeNode = {
     address_line2: string;
     latitude: number;
     longitude: number;
+    zoom: number;
   };
 };
 
 export default function Map() {
-  const mapRef = useRef<unknown>(null);
   const [selectedOffice, setSelectedOffice] = useState<OfficeNode | undefined | null>(null);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY as never,
   });
-  const onLoad = useCallback(
-    (mapInstance) => {
-      const bounds = new google.maps.LatLngBounds();
-      offices.forEach((office) => {
-        bounds.extend(new google.maps.LatLng(office.field_address.latitude, office.field_address.longitude));
-      });
-      mapRef.current = mapInstance;
-      mapInstance.fitBounds(bounds);
-    },
-    [offices],
-  );
 
-  const onClickMarker = (officeId: string) => {
-    setSelectedOffice(offices.find((office) => office.id === officeId));
+  const onClickMarker = () => {
+    setSelectedOffice(office);
   };
   return (
     <div>
@@ -45,25 +34,23 @@ export default function Map() {
         <>
           <GoogleMap
             mapContainerClassName="c-office-overview__map"
-            onLoad={onLoad}
-            zoom={17}
-            center={new google.maps.LatLng(offices[0].field_address.latitude, offices[0].field_address.longitude)}
+            center={new google.maps.LatLng(office.field_address.latitude, office.field_address.longitude)}
+            zoom={office.field_address.zoom}
           >
-            {offices.map((office) => (
-              <Marker
-                icon={{
-                  url: symbol,
-                  anchor: new google.maps.Point(8, 45),
-                  scaledSize: new google.maps.Size(45, 45),
-                }}
-                key={office.id}
-                onClick={() => onClickMarker(office.id)}
-                position={{
-                  lat: office.field_address.latitude,
-                  lng: office.field_address.longitude,
-                }}
-              />
-            ))}
+            <Marker
+              icon={{
+                url: symbol,
+                anchor: new google.maps.Point(8, 45),
+                scaledSize: new google.maps.Size(45, 45),
+              }}
+              key={office.id}
+              onClick={() => onClickMarker()}
+              position={{
+                lat: office.field_address.latitude,
+                lng: office.field_address.longitude,
+              }}
+            />
+
             {selectedOffice && (
               <InfoWindow
                 position={{
@@ -72,10 +59,23 @@ export default function Map() {
                 }}
                 onCloseClick={() => setSelectedOffice(null)}
               >
-                <p>
-                  {selectedOffice.field_address.address_line1} {selectedOffice.field_address.address_line2} -{' '}
-                  {selectedOffice.field_address.postal_code} {selectedOffice.field_address.locality}
-                </p>
+                <div>
+                  {' '}
+                  <p className="text-primary-main">
+                    {selectedOffice.field_address.address_line1}
+                    {selectedOffice.field_address.address_line2}
+                    <br />
+                    {selectedOffice.field_address.postal_code}
+                    <br />
+                    {selectedOffice.field_address.locality}
+                  </p>
+                  <a
+                    className="text-secondary-main"
+                    href="https://www.google.com/maps/place/Ul.+kralja+Zvonimira+11,+53291,+Novalja/@44.5569125,14.8821947,17z/data=!3m1!4b1!4m5!3m4!1s0x47624a2fd5825dbf:0x295b07a1cb98013e!8m2!3d44.5569087!4d14.8843834"
+                  >
+                    See in Google Maps
+                  </a>
+                </div>
               </InfoWindow>
             )}
           </GoogleMap>

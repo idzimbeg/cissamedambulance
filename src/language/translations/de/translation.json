@@ -3,7 +3,7 @@
   "introText": "Wir sind eine private ambulante Klinik im Zentrum von Novalja und alle unsere Mitarbeiter verfügen über langjährige Erfahrung im Bereich der Notfall- und Familienmedizin sowie der Pädiatrie, weshalb wir Ihnen und Ihrer jüngsten Familie die beste medizinische Versorgung bieten können Mitglieder!",
   "mainTitle": "Was wir anbieten",
   "address": "Kralja Zvonimira Strasse 11, Novalja",
-  "workingHours": "10 am – 10 pm",
+  "workingHours": "10:00-22:00",
   "phone": "+385 95 806 5614",
   "firstMenuEntry": "Erste ärztliche Untersuchung",
   "secondMenuEntry": "Grundlegende Diagnoseverarbeitung",
@@ -28,7 +28,8 @@
   "accessibilitySchema": "Barrierefreiheit",
   "paymentSchema": "Beste Preise",
   "email": "cissamednv@gmail.com",
-  "Home": "Heim",
+  "emailSchema": "Email:",
+  "Home": "Anfang",
   "Work": "Arbeit",
   "Where to find us": "Wo Sie uns finden",
   "Languages": "Sprache"

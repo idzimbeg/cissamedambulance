@@ -28,7 +28,8 @@
   "accessibilitySchema": "Accesibilidad",
   "paymentSchema": "Mejores tarifas",
   "email": "cissamednv@gmail.com",
-  "Home": "Hogar",
+  "emailSchema": "Email:",
+  "Home": "Inicio",
   "Work": "Trabajar",
   "Where to find us": "Dónde encontrarnos",
   "Languages": "Idioma"

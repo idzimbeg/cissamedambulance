@@ -7,22 +7,22 @@ import { symbol } from 'consts/consts';
 
 export function HomePage() {
   return (
-    <HeaderTitleLayout title={t('touristMedicalOffice')} description={t('slogan')}>
-      <div className="mt-2 md:mx-32 text-lg">
+    <HeaderTitleLayout title={t('touristMedicalOffice')} description={t('address')}>
+      <div className="mt-4 md:mx-32 text-lg">
         <>{t('introText')}</>
       </div>
       <div className="xl:mt-5 justify-center items-center flex">
         <div className="w-[400px] my-50 mx-auto xl:mx-0">
           <img className="object-contain" src={symbol} alt="symbol" />
         </div>
-        <div className="text-lg">
+        <div className="text-2xl xl:">
           <>{`${t('workSchema')} ${t('workingHours')}`}</>
           <br />
           <BsWhatsapp />
           <>{`${t('contact')} ${t('phone')}`}</>
           <br />
           <HiOutlineMailOpen />
-          <>{t('email')}</>
+          <>{`${t('emailSchema')} ${t('email')}`}</>
           <br />
         </div>
       </div>
