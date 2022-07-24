@@ -63,7 +63,7 @@ export function WorkPage() {
   return (
     <HeaderTitleLayout title={t('touristMedicalOffice')} description={t('menuSchema')}>
       <div className="flex xl:mt-20 sm:mx-20 justify-between">
-        <div className="flex flex-col justify-between items-start xl:max-w-3xl">
+        <div className="flex flex-col justify-between xl:max-w-3xl text-center">
           {menuOptions1.map((item) => (
             <div
               className="flex flex-col xl:max-w-3xl hover:text-primary-main hover:bg-secondary-light rounded-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-secondary-main hover:ring-secondary-light"
@@ -73,7 +73,7 @@ export function WorkPage() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col justify-between items-start">
+        <div className="flex flex-col justify-between text-center">
           {menuOptions2.map((item) => (
             <div
               className="flex flex-col xl:max-w-3xl hover:text-primary-main hover:bg-secondary-light rounded-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-secondary-main hover:ring-secondary-light"
