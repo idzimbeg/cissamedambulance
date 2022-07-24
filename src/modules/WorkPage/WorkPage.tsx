@@ -9,7 +9,7 @@ const menuOptions1 = [
   },
   {
     id: '2',
-    label: t('secondMenuEntry'),
+    label: t('eightMenuEntry'),
   },
   {
     id: '3',
@@ -17,7 +17,7 @@ const menuOptions1 = [
   },
   {
     id: '4',
-    label: t('fourthMenuEntry'),
+    label: t('thirteenthMenuEntry'),
   },
   {
     id: '5',
@@ -35,7 +35,7 @@ const menuOptions2 = [
   },
   {
     id: '2',
-    label: t('eightMenuEntry'),
+    label: t('secondMenuEntry'),
   },
   {
     id: '3',
@@ -43,9 +43,8 @@ const menuOptions2 = [
   },
   {
     id: '4',
-    label: t('thirteenthMenuEntry'),
+    label: t('fourthMenuEntry'),
   },
-
   {
     id: '5',
     label: t('eleventhMenuEntry'),

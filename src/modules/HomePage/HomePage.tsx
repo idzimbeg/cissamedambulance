@@ -11,11 +11,11 @@ export function HomePage() {
       <div className="mt-4 md:mx-32 text-lg">
         <>{t('introText')}</>
       </div>
-      <div className="xl:mt-5 justify-center items-center flex">
-        <div className="w-[400px] my-50 mx-auto xl:mx-0">
+      <div className="xl:mt-5 justify-center items-center flex flex-col">
+        <div className="w-[200px] my-50 mx-auto xl:mx-0">
           <img className="object-contain" src={symbol} alt="symbol" />
         </div>
-        <div className="text-2xl xl:">
+        <div className="text-2xl">
           <>{`${t('workSchema')} ${t('workingHours')}`}</>
           <br />
           <BsWhatsapp />

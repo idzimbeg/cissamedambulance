@@ -15,6 +15,7 @@ i18n
   .init({
     returnEmptyString: false,
     lng: i18n.options.lng,
+    fallbackLng: 'en',
     resources: {
       hr: {
         translation: TRANSLATIONS_HR,
