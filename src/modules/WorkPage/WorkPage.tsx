@@ -66,7 +66,7 @@ export function WorkPage() {
         <div className="flex flex-col justify-between xl:max-w-3xl text-center">
           {menuOptions1.map((item) => (
             <div
-              className="flex flex-col xl:max-w-3xl hover:text-primary-main hover:bg-secondary-light rounded-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-secondary-main hover:ring-secondary-light"
+              className="transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 cursor-default ..."
               key={item.id}
             >
               <div className="m-2 text-lg ">{item.label}</div>
@@ -76,7 +76,7 @@ export function WorkPage() {
         <div className="flex flex-col justify-between text-center">
           {menuOptions2.map((item) => (
             <div
-              className="flex flex-col xl:max-w-3xl hover:text-primary-main hover:bg-secondary-light rounded-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-secondary-main hover:ring-secondary-light"
+              className="transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 cursor-default ..."
               key={item.id}
             >
               <div className="m-2 text-lg">{item.label}</div>
