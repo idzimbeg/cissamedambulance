@@ -1,6 +1,6 @@
 import { t } from 'i18next';
 import { HeaderTitleLayout } from 'components/Layouts';
-import { symbol } from 'consts/consts';
+import { backgroundImage, symbol } from 'consts/consts';
 
 const menuOptions1 = [
   {
@@ -61,25 +61,30 @@ const menuOptions2 = [
 
 export function WorkPage() {
   return (
-    <HeaderTitleLayout title={t('touristMedicalOffice')} description={t('menuSchema')}>
-      <div className="flex xl:mt-20 sm:mx-20 justify-between">
+    <HeaderTitleLayout
+      title={t('touristMedicalOffice')}
+      description={t('menuSchema')}
+      bg={<img className="w-full -my-5" src={backgroundImage} />}
+      className="-mt-8"
+    >
+      <div className="flex justify-between">
         <div className="flex flex-col justify-between xl:max-w-3xl text-center">
           {menuOptions1.map((item) => (
             <div
               className="transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 cursor-default ..."
               key={item.id}
             >
-              <div className="m-2 text-lg ">{item.label}</div>
+              <div className="md:m-2 m-1 text-sm md:text-lg">{item.label}</div>
             </div>
           ))}
         </div>
-        <div className="flex flex-col justify-between text-center">
+        <div className="flex flex-col justify-between xl:max-w-3xl text-center">
           {menuOptions2.map((item) => (
             <div
               className="transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 cursor-default ..."
               key={item.id}
             >
-              <div className="m-2 text-lg">{item.label}</div>
+              <div className="m-1 md:m-2 text-sm md:text-lg">{item.label}</div>
             </div>
           ))}
         </div>

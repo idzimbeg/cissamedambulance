@@ -10,9 +10,9 @@
     @apply text-5xl font-medium font-karla;
   }
   h2 {
-    @apply text-2xl font-bold font-karla;
+    @apply md:text-2xl text-xl font-bold font-karla;
   }
   p {
-    @apply font-karla;
+    @apply font-karla text-base;
   }
 }
