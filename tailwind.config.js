@@ -11,12 +11,15 @@ module.exports = {
           dark: '#1e1e1f',
         },
         secondary: {
-          light: '#fff5f8',
-          main: '#ff3366',
+          light: '#9CC0F9',
+          main: '#025E91',
           dark: '#e62958',
         },
       },
+      fontFamily: {
+        karla: ['Karla', 'sans-serif'],
+      },
+      plugins: [],
     },
-    plugins: [],
   },
 };

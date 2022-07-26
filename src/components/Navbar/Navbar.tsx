@@ -51,14 +51,14 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-primary-main">
+    <Disclosure as="nav" className="bg-secondary-light">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary-light hover:text-primary-light hover:bg-primary-main focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-light">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary-light hover:text-primary-light hover:bg-secondary-main focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-light">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <MenuAlt1Icon className="block h-6 w-6" aria-hidden="true" />
@@ -87,7 +87,7 @@ export default function Navbar() {
                   {/* Language Dropdown */}
                   <Menu as="div" className="ml-3 relative">
                     <div>
-                      <Menu.Button className="bg-primary-main flex text-md text-primary-light rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-main focus:ring-secondary-main">
+                      <Menu.Button className=" flex text-md text-primary-light rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-secondary-main focus:ring-secondary-light">
                         <>{t('Languages')}</>
                       </Menu.Button>
                     </div>

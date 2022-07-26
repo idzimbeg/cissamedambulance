@@ -1,5 +1,10 @@
 import Symbol from '../images/simbol-02.svg';
 import Logo from '../images/logo.svg';
+import Email from '../images/email.svg';
+import Location from '../images/lokacija.svg';
+import Hours from '../images/radnovreme.svg';
+import Phone from '../images/telefon.svg';
+
 export const LANGUAGES = {
   en: { nativeName: 'English' },
   hr: { nativeName: 'Hrvatski' },
@@ -24,3 +29,7 @@ export const office = {
 
 export const symbol = Symbol;
 export const backgroundImage = Logo;
+export const email = Email;
+export const location = Location;
+export const hour = Hours;
+export const phone = Phone;
